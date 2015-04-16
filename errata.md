@@ -1,0 +1,2 @@
+ReduceMapFast - Fe de erratas
+=============================
