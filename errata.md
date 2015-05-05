@@ -19,3 +19,8 @@ La frase debería decir:
 > Al recibir una operación de escritura, deberá balancear la asignación de los bloques entre todos los Nodos del sistema, evitando que en un mismo Nodo exista más de una copia de algún bloque.
 
 * En la página 15, el enunciado especifica eventos que el proceso FileSystem debe loggear en Pantalla. Dado que la terminal en que se ejecute este proceso quedará tomado por la Consola del FileSystem para interactuar con el usuario, no se deberá loggear ningún evento por pantalla, a fin de que los mensajes no interrumpan al usuario.
+
+* En los Parámetros de Configuración del proceso FileSystem (páginas 14 y 15), el enunciado dice que tendrá una:
+> Lista de nodos mínima que deben estar conectados para que el FileSystem pase a estado Operativo
+
+En realidad, el proceso FileSystem no tendrá como configuración una lista de Nodos que necesita que estén levantados, si no una cantidad de Nodos que deben estar conectados para arrancar.
