@@ -24,3 +24,9 @@ La frase debería decir:
 > Lista de nodos mínima que deben estar conectados para que el FileSystem pase a estado Operativo
 
 En realidad, el proceso FileSystem no tendrá como configuración una lista de Nodos que necesita que estén levantados, si no una cantidad de Nodos que deben estar conectados para arrancar.
+
+* Para pasar al estado Operativo, el FileSystem deberá esperar a que se le conecten una cantidad mínima de Nodos, especificada por archivo de configuración. A partir de ese momento, el FileSystem se mantendrá Operativo durante toda la vida del proceso.
+
+Los archivos se mantendrán Operativos mientras esté accessible al menos una copia de cada uno de sus bloques de datos.
+
+Una operación de agregado de un archivo al FileSystem será exitosa sólo si se pueden crear al menos 3 copias (en Nodos distintos) de cada uno de sus bloques de datos. Si esto no fuera posible, la operación deberá fallar sin ocupar bloques de datos.
