@@ -30,3 +30,5 @@ En realidad, el proceso FileSystem no tendrá como configuración una lista de N
 Los archivos se mantendrán Disponibles mientras esté accessible al menos una copia de cada uno de sus bloques de datos.
 
 Una operación de agregado de un archivo al FileSystem será exitosa sólo si se pueden crear al menos 3 copias (en Nodos distintos) de cada uno de sus bloques de datos. Si esto no fuera posible, la operación deberá fallar sin ocupar bloques de datos.
+
+* El proceso Nodo deberá ejecutar todas sus tareas de Map y Reduce de manera concurrente
