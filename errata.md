@@ -32,3 +32,7 @@ Los archivos se mantendrán Disponibles mientras esté accessible al menos una c
 Una operación de agregado de un archivo al FileSystem será exitosa sólo si se pueden crear al menos 3 copias (en Nodos distintos) de cada uno de sus bloques de datos. Si esto no fuera posible, la operación deberá fallar sin ocupar bloques de datos.
 
 * El proceso Nodo deberá ejecutar todas sus tareas de Map y Reduce de manera concurrente
+
+* El MDFS deberá soportar la existencia de más de 3 copias de cada bloque de datos, y deberá tenerlas a todas en cuenta al momento de operar con ellos.
+
+Por ejemplo, si se usara la operación Copiar bloque para generar una cuarta copia de un bloque en particular, el FS debería incluir esa cuarta copia como una posible ubicación de ese bloque cuando MaRTA le pida los bloques que componen un archivo.
