@@ -13,6 +13,7 @@ ReduceMapFast - Fe de erratas
 |   6   | fotos      |   2   |
 
 * En la página 11, sección "Redundancia", el enunciado dice:
+
 > Al recibir una operación de escritura deberá balancear la asignación de los bloques entre todos los Nodos del sistema junto con evitar que el mismo bloque de datos de un archivo más de una vez en el mismo nodo.
 
 La frase debería decir:
