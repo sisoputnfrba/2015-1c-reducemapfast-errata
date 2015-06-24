@@ -38,4 +38,4 @@ Una operación de agregado de un archivo al FileSystem será exitosa sólo si se
 
 Por ejemplo, si se usara la operación Copiar bloque para generar una cuarta copia de un bloque en particular, el FS debería incluir esa cuarta copia como una posible ubicación de ese bloque cuando MaRTA le pida los bloques que componen un archivo.
 
-* El FileSystem debe soportar cualquier cantidad de copias de cada bloque de datos de un archivo, pero aceptamos que el FS envíe a MaRTA únicamente 3 copias de cada bloque para planificar. Queda a discresión de cada grupo decidir cuáles de todas las copias disponibles elegir para enviar a MaRTA.
+* El FileSystem debe soportar cualquier cantidad de copias de cada bloque de datos de un archivo, pero aceptamos que el FS envíe a MaRTA únicamente 3 copias de cada bloque para planificar. Queda a discreción de cada grupo decidir cuáles de todas las copias disponibles elegir para enviar a MaRTA.
