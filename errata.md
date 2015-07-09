@@ -39,3 +39,8 @@ Una operación de agregado de un archivo al FileSystem será exitosa sólo si se
 Por ejemplo, si se usara la operación Copiar bloque para generar una cuarta copia de un bloque en particular, el FS debería incluir esa cuarta copia como una posible ubicación de ese bloque cuando MaRTA le pida los bloques que componen un archivo.
 
 * El FileSystem debe soportar cualquier cantidad de copias de cada bloque de datos de un archivo, pero aceptamos que el FS envíe a MaRTA únicamente 3 copias de cada bloque para planificar. Queda a discreción de cada grupo decidir cuáles de todas las copias disponibles elegir para enviar a MaRTA.
+
+* En la página 22, el enunciado especifica que ante la salida de un Nodo del sistema durante o luego de rutinas map o reduce, se deberá re-planificar. Dada la complejidad de ciertos sistemas a adaptarse al requerimiento de re-planificar ante la falla de un reduce, se permite que en vez de re-planificar, el Job falle.
+
+* Los tamaños de los archivos que el sistema debe poder manejar superan los 2GB, por lo que se deben tomar en cuenta los siguientes recaudos:
+> Al utilizar la función `open()` ante archivos >2GB se debe compilar utilizando el flag `-D_FILE_OFFSET_BITS=64` y definiendo las constantes `_LARGEFILE64_SOURCE 1` y `_FILE_OFFSET_BITS 64`. Ante la función `mmap()` se debe contemplar que no necesariamente se posea memoria suficiente en la memoria y en el Swap. Por lo tanto, se debe invocar a la función utilizando el flag `MAP_NORESERVE`.
