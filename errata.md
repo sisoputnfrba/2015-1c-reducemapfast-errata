@@ -42,5 +42,7 @@ Por ejemplo, si se usara la operación Copiar bloque para generar una cuarta cop
 
 * En la página 22, el enunciado especifica que ante la salida de un Nodo del sistema durante o luego de rutinas map o reduce, se deberá re-planificar. Dada la complejidad de ciertos sistemas a adaptarse al requerimiento de re-planificar ante la falla de un reduce, se permite que en vez de re-planificar, el Job falle.
 
-* Los tamaños de los archivos que el sistema debe poder manejar superan los 2GB, por lo que se deben tomar en cuenta los siguientes recaudos:
-> Al utilizar la función `open()` ante archivos >2GB se debe compilar utilizando el flag `-D_FILE_OFFSET_BITS=64`. Ante la función `mmap()` se debe contemplar que no necesariamente se posea memoria suficiente en la memoria y en el Swap. Por lo tanto, se debe invocar a la función utilizando el flag `MAP_NORESERVE`.
+* ~~Los tamaños de los archivos que el sistema debe poder manejar superan los 2GB, por lo que se deben tomar en cuenta los siguientes recaudos:~~
+> ~~Al utilizar la función `open()` ante archivos >2GB se debe compilar utilizando el flag `-D_FILE_OFFSET_BITS=64`. Ante la función `mmap()` se debe contemplar que no necesariamente se posea memoria suficiente en la memoria y en el Swap. Por lo tanto, se debe invocar a la función utilizando el flag `MAP_NORESERVE`.~~
+
+* Los Nodos no necesitarán soportar Espacios de Datos mayores a 2GB, a fin de evitar inconvenientes con los archivos grandes en `mmap`.
